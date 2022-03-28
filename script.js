@@ -1,24 +1,46 @@
+function submitForm()
+{
+    let form = document.createElement('form');
+    form.action = "ref.html";
+
+    document.body.append(form);
+
+    form.submit();
+}
+
 function isValid()
 {
     let email = document.getElementById("email_input");
     let password = document.getElementById("password_input");
 
+    let emailIsValid;
+    let passwordIsValid;
+
     if (email.value.length > 3 && email.value.includes('@') && email.value.includes('.'))
     {
         email.style["border-color"] = null;
+        emailIsValid = true;
     }
     else
     {
         email.style["border-color"] = "red";
+        emailIsValid = false;
     }
 
     if (/^[0-9a-zA-Z]+$/.test(password.value))
     {
         password.style["border-color"] = null;
+        passwordIsValid = true;
     }
     else
     {
         password.style["border-color"] = "red";
+        passwordIsValid = false;
+    }
+
+    if (emailIsValid && passwordIsValid)
+    {
+        submitForm();
     }
 }
 
