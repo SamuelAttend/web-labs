@@ -1,6 +1,6 @@
 body {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  background: url(soldier-tf2.jpeg) no-repeat center top fixed;
+  background: url(src/soldier-tf2.jpeg) no-repeat center top fixed;
 }
 
 .container {

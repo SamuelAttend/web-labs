@@ -1,17 +1,38 @@
-function submitForm()
+function submit()
 {
-    let form = document.createElement('form');
-    form.action = "ref.html";
-
-    document.body.append(form);
-
+    let form = document.getElementById("form");
     form.submit();
+    
+    // let response;
+
+    // fetch('/admin', {
+    //     method: 'GET',
+    //     headers: {
+    //     'Content-Type': 'application/json;charset=utf-8',
+    //     'Accept': 'application/json',
+    //     'secret': 'I know the secret',
+    //     },
+    //   })
+    //     .then((res) => {
+    //         console.log(res);
+    //         return res.json();
+    //     })
+    //     .then((data) => {
+    //       response = data
+    //     })
+
+    fetch('/admin', {
+        method: 'GET',
+        headers: {
+        'secret': 'I know the secret'
+        }
+      })
 }
 
-function isValid()
+function login()
 {
-    let email = document.getElementById("email_input");
-    let password = document.getElementById("password_input");
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
 
     let emailIsValid;
     let passwordIsValid;
@@ -40,7 +61,7 @@ function isValid()
 
     if (emailIsValid && passwordIsValid)
     {
-        submitForm();
+        submit();
     }
 }
 
@@ -57,7 +78,7 @@ function isDarkTheme()
     }
     else
     {
-        document.body.style.backgroundImage = "url(majima-kiryu-yakuza0.jpg)";
+        document.body.style.backgroundImage = "url(src/majima-kiryu-yakuza0.jpg)";
         document.querySelector("button").style["border-color"] = "crimson";
         document.querySelector("img").style["border-color"] = "crimson";
         document.querySelector("img").style["box-shadow"] = "inset 0 10px 0 crimson, inset -10px 0 0 crimson, inset 0 -10px 0 crimson, inset 10px 0 0 crimson, inset -7.5px 7.5px 0 crimson, inset -7.5px -7.5px 0 crimson, inset 7.5px -7.5px 0 crimson, inset 7.5px 7.5px 0 crimson";
