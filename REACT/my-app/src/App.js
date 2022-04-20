@@ -1,12 +1,23 @@
-import './App.css';
-import { ClassComponent } from './ClassComponent/ClassComponent';
-import { FunctionalComponent } from './FunctionalComponent/FunctionalComponent';
+import { Route, Routes, Link } from 'react-router-dom';
+import { MainPage } from './MainPage/MainPage';
+
+const linkStyle = {
+  textDecoration: "none",
+  color: 'black',
+  padding: '10px'
+}
 
 function App() {
   return (
-    <div className="App">
-      <ClassComponent />
-      <FunctionalComponent action="Активировать!" />
+    <div>
+      <header>
+        <Link to={'/'} style={linkStyle}>Астероиды</Link>
+        <Link to={'Destoy'} style={linkStyle}>Уничтожение</Link>
+      </header>
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='Destroy' element={<label>123</label>} />
+      </Routes>
     </div>
   );
 }
