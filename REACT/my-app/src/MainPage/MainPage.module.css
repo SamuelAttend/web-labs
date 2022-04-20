@@ -8,7 +8,6 @@
     background: #FFFFFF;
 }
 
-
 .Name{
     position: relative;
     width: 299px;
@@ -81,6 +80,55 @@
     line-height: 20px;
 
     color: #000000;
+}
+
+.Quote{
+    position: relative;
+    width: 299px;
+    height: 24px;
+    left: 491px;
+    top: 300px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+
+    color: #000000;
+}
+
+button.UnitsDefault{
+    background:none; 
+    border:none;
+    margin: 0px;
+    padding: 5px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+button.UnitsActive{
+    background:none; 
+    border:none;
+    margin: 0px;
+    padding: 5px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+
+    font-weight: bold;
+    text-decoration: none;
 }
 
 @media(max-width:920px){

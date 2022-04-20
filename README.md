@@ -4,4 +4,6 @@
 2.Authorization Form\
 3.Initial Script\
 4.Express Server\
-5.React App
+5.React App\
+6.Figma Template\
+7.Figma Template 2
