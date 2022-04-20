@@ -1,0 +1,387 @@
+.Card{
+    position: relative;
+    width: 920px;
+    height: 200px;
+    left: 206px;
+    top: 228px;
+    margin-top: 50px;
+
+    overflow:hidden;
+    
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px; 
+}
+
+.GreenCard{
+    position: relative;
+    width: 920px;
+    height: 200px;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(90deg, #CFF37D 0%, #7DE88C 100%);
+}
+
+.RedCard{
+    position: relative;
+    width: 920px;
+    height: 200px;
+    left: 0px;
+    top: 0px;
+    
+    background: linear-gradient(90deg, #FFB199 0%, #FF0844 100%);
+}
+
+.Name{
+    position: absolute;
+    width: 94px;
+    height: 32px;
+    left: 347px;
+    top: 24px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+
+    text-decoration-line: underline;
+
+    color: #000000;
+}
+
+.Info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: absolute;
+    width: 289px;
+    height: 88px;
+    left: 347px;
+    top: 72px;
+}
+
+.Date{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0px;
+    
+    position: static;
+    width: 289px;
+    height: 24px;
+    left: 0px;
+    top: 0px;
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 8px 0px;
+}
+
+.Distance{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0px;
+    
+    position: static;
+    width: 289px;
+    height: 24px;
+    left: 0px;
+    top: 32px;
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 8px 0px;
+}
+
+.Size{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0px;
+    
+    position: static;
+    width: 289px;
+    height: 24px;
+    left: 0px;
+    top: 64px;
+    
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 8px 0px;
+}
+
+.Rating{
+    position: absolute;
+    width: 80px;
+    height: 48px;
+    left: 777px;
+    top: 40px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+
+    color: #000000;
+}
+
+.Destroy{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+
+    position: absolute;
+    width: 158px;
+    height: 48px;
+    left: 738px;
+    top: 96px;
+
+    background: #186DD6;
+    border-radius: 24px;
+}
+
+.DestroyText{
+    position: static;
+    height: 20px;
+    left: 16px;
+    right: 16px;
+    top: calc(50% - 20px/2);
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 4px;
+}
+
+.Dino{
+    position: absolute;
+    left: 1.74%;
+    right: 92.17%;
+    top: 75%;
+    bottom: 0%;
+}
+
+.Asteroid{
+    position: absolute;
+    left: 128px;
+    top: -20px;
+}
+
+@media(max-width:920px){
+    .Card{
+        position: relative;
+        width: 288px;
+        height: 391px;
+        left: 0px;
+        top: 228px;
+        margin-top: 75px;
+
+        overflow:hidden;
+
+        background: white;
+
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    .GreenCard{
+        position: absolute;
+        width: 288px;
+        height: 145px;
+        left: 0px;
+        top: 0px;
+        
+        background: linear-gradient(90deg, #CFF37D 0%, #7DE88C 100%);
+    }
+
+    .RedCard{
+        position: absolute;
+        width: 288px;
+        height: 145px;
+        left: 0px;
+        top: 0px;
+        
+        background: linear-gradient(90deg, #FFB199 0%, #FF0844 100%);  
+    }
+    
+    .Dino{
+        position: absolute;
+        left: 97.22%;
+        top: 67%;
+        bottom: 0%;
+
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+
+    .Name{
+        position: absolute;
+        width: 94px;
+        height: 32px;
+        left: 16px;
+        top: 105px;
+
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+
+        text-decoration-line: underline;
+
+        color: #000000;
+    }
+
+    .Info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+
+        position: absolute;
+        width: 255px;
+        height: 88px;
+        left: 16px;
+        top: 145px;
+    }
+
+    .Date{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        padding: 0px;
+
+        position: static;
+        width: 255px;
+        height: 24px;
+        left: 0px;
+        top: 0px;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin: 8px 0px;
+    }
+
+    .Distance{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        padding: 0px;
+
+        position: static;
+        width: 255px;
+        height: 24px;
+        left: 0px;
+        top: 32px;
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin: 8px 0px;
+    }
+
+    .Size{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        padding: 0px;
+
+        position: static;
+        width: 255px;
+        height: 24px;
+        left: 0px;
+        top: 64px;
+
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+        margin: 8px 0px;
+    }
+
+    .Rating{
+        position: absolute;
+        width: 80px;
+        height: 48px;
+        left: 104px;
+        top: 265px;
+
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+
+        display: flex;
+        align-items: flex-end;
+        text-align: center;
+
+        color: #000000;
+    }
+
+    .Destroy{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 16px;
+
+        position: absolute;
+        width: 158px;
+        height: 48px;
+        left: 65px;
+        top: 321px;
+
+        background: #186DD6;
+        border-radius: 24px;
+    }
+
+    .DestroyText{
+        position: static;
+        height: 20px;
+        left: 16px;
+        right: 16px;
+        top: calc(50% - 20px/2);
+
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+
+        color: #FFFFFF;
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin: 0px 4px;
+    }
+
+    .Asteroid{
+        position: absolute;
+        left: 58px;
+        top: -20px;
+    }
+}
