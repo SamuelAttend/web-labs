@@ -89,7 +89,7 @@ export function CardContent(props){
                         Дата: {props.date}
                     </div>
                     <div className={styles.Distance}>
-                        Расстояние: {props.distance} км
+                        Расстояние: {props.distance}
                     </div>
                     <div className={styles.Size}>
                         Размер: {props.size} м

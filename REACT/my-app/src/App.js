@@ -16,7 +16,7 @@ function App() {
       </header>
       <Routes>
         <Route path='/' element={<MainPage />} />
-        <Route path='Destroy' element={<label>123</label>} />
+        <Route path='Destroy' element={<label></label>} />
       </Routes>
     </div>
   );
