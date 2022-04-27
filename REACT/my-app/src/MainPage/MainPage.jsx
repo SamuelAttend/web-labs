@@ -5,7 +5,7 @@ import styles from  "./MainPage.module.css"
 function TransformDate(date)
 {
     let day = date.getDate();
-    let month = date.getMonth();
+    let month = date.getMonth() + 1;
     if (day < 10)
     {
         day = '0' + day;
