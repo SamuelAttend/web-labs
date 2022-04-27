@@ -25,11 +25,10 @@ function GetURL()
     {
         KEY = "DEMO_KEY";
     }
-    KEY = "DEMO_KEY";
 
     let date = new Date();
     const start = TransformDate(date);
-    date.setDate(date.getDate() + 5);
+    date.setDate(date.getDate() + 7);
     const end = TransformDate(date);
 
     const url = ('https://api.nasa.gov/neo/rest/v1/feed?start_date=' + start + '&end_date=' + end + '&api_key=' + KEY);
@@ -88,9 +87,15 @@ export function MainPage() {
         setUnits('лун');
     }
 
-    function passDistance(distance)
+    function GetDistance(distance)
     {
         return (units === 'км' ? distance : (distance/384400).toFixed(0)) + ' ' + units;
+    }
+
+    let asteroids_show = asteroids;
+    if (onlyDangerous)
+    {
+        asteroids_show = asteroids_show.filter((i) => i.rating === 'Опасен');
     }
 
     return (<div className={styles.MainPage}>
@@ -102,9 +107,7 @@ export function MainPage() {
             <button onClick={unitsToKm} className={styles.UnitsDefault + ' ' + (units === 'км' ? styles.UnitsActive : styles.UnitsDefault)}>в километрах</button>,
             <button onClick={unitsToMoons} className={styles.UnitsDefault + ' ' + (units === 'лун' ? styles.UnitsActive : styles.UnitsDefault)}>в дистанциях до луны</button>
         </div>
-        {onlyDangerous === true ? asteroids.filter((i)=>i.rating==='Опасен').map((i)=><div><CardContent name={i.name} date={i.date} distance={passDistance(i.distance)} rating={i.rating} size={i.size}/></div>)
-        :
-        asteroids.map((i)=><div><CardContent name={i.name} date={i.date} distance={passDistance(i.distance)} rating={i.rating} size={i.size}/></div>)}
+        {asteroids_show.map((i)=><div><CardContent name={i.name} date={i.date} distance={GetDistance(i.distance)} rating={i.rating} size={i.size}/></div>)}
         <div className={styles.Quote}>
             2022 © Все права и планета защищены
         </div>
