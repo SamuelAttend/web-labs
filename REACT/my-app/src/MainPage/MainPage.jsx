@@ -2,52 +2,77 @@ import React, { useEffect, useState } from "react";
 import { CardContent } from "../Card/CardContent/CardContent"
 import styles from  "./MainPage.module.css"
 
-function GenerateAsteroids()
+function TransformDate(date)
 {
-    const monthNames = [
-        'января',
-        'февраля',
-        'марта',
-        'апреля',
-        'мая',
-        'июня',
-        'июля',
-        'августа',
-        'сентября',
-        'октября',
-        'ноября',
-        'декабря',
-    ]
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    if (day < 10)
+    {
+        day = '0' + day;
+    }
+    if (month < 10)
+    {
+        month = '0' + month;
+    }
 
-    const charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZa';
+    return date.getFullYear() + '-' + month + '-' + day;
+}
 
+function GetURL()
+{
+    let KEY = process.env.REACT_APP_NASA_API_KEY;
+    if (!KEY)
+    {
+        KEY = "DEMO_KEY";
+    }
+
+    let date = new Date();
+    const start = TransformDate(date);
+    date.setDate(date.getDate() + 7);
+    const end = TransformDate(date);
+
+    const url = ('https://api.nasa.gov/neo/rest/v1/feed?start_date=' + start + '&end_date=' + end + '&api_key=' + KEY);
+
+    return url;
+}
+
+function GetAsteroidsData(data)
+{
     const asteroids = [];
 
-    for (let i = 0; i < 10; i++)
+    for (let i in data.near_earth_objects)
     {
-        const name = new Date(100000000000 + Math.random()*10000000000000).getFullYear() + ' ' + charSet[(Math.random()*25).toFixed(0)] + charSet[(Math.random()*25).toFixed(0)]
-        const date = new Date(10000000000000 + Math.random()*10000000000000);
-        const year = date.getFullYear();
-        const month = monthNames[date.getMonth()];
-        const day = date.getDate();
-        const distance = (1000000 + Math.random()*10000000000000).toFixed(0);
-        const rating = Math.random() < 0.5 ? 'Опасен' : 'Не опасен';
-        const size = (10 + Math.random()*1200).toFixed(0);
-
-        asteroids.push({
-            name: name,
-            date: day + ' ' + month + ' ' + year + ' года',
-            distance: distance,
-            rating: rating,
-            size: size
-        })
+        for (let j in data.near_earth_objects[i])
+        {
+            let asteroid_data = data.near_earth_objects[i][j];
+            asteroids.push({
+                name: asteroid_data.name,
+                date: asteroid_data.close_approach_data[0].close_approach_date,
+                distance: asteroid_data.close_approach_data[0].miss_distance.kilometers,
+                rating: (asteroid_data.is_potentially_hazardous_asteroid ? "Опасен" : "Не опасен"),
+                size: (asteroid_data.estimated_diameter.meters.estimated_diameter_min + asteroid_data.estimated_diameter.meters.estimated_diameter_max) / 2
+            });
+        }
     }
 
     return asteroids;
 }
 
 export function MainPage() {
-    const [asteroids, setAsteroids] = useState(GenerateAsteroids())
+    const [asteroids, setAsteroids] = useState([
+        {
+            name: "Loading...",
+            date: "Loading...",
+            distance: "Loading...",
+            rating: "Loading...",
+            size: "Loading..."
+        }
+    ]);
+
+    useEffect(() => {fetch(GetURL())
+        .then((response) => response.json()
+        .then((data) => {setAsteroids(GetAsteroidsData(data));}))
+        .catch((error) => console.log(error))}, []);
     
     const [onlyDangerous, setOnlyDangerous] = useState(false);
     const onlyDangerousOnChange = () => {
@@ -62,9 +87,15 @@ export function MainPage() {
         setUnits('лун');
     }
 
-    function passDistance(distance)
+    function GetDistance(distance)
     {
         return (units === 'км' ? distance : (distance/384400).toFixed(0)) + ' ' + units;
+    }
+
+    let asteroids_show = asteroids;
+    if (onlyDangerous)
+    {
+        asteroids_show = asteroids_show.filter((i) => i.rating === 'Опасен');
     }
 
     return (<div className={styles.MainPage}>
@@ -76,9 +107,7 @@ export function MainPage() {
             <button onClick={unitsToKm} className={styles.UnitsDefault + ' ' + (units === 'км' ? styles.UnitsActive : styles.UnitsDefault)}>в километрах</button>,
             <button onClick={unitsToMoons} className={styles.UnitsDefault + ' ' + (units === 'лун' ? styles.UnitsActive : styles.UnitsDefault)}>в дистанциях до луны</button>
         </div>
-        {onlyDangerous === true ? asteroids.filter((i)=>i.rating==='Опасен').map((i)=><div><CardContent name={i.name} date={i.date} distance={passDistance(i.distance)} rating={i.rating} size={i.size}/></div>)
-        :
-        asteroids.map((i)=><div><CardContent name={i.name} date={i.date} distance={passDistance(i.distance)} rating={i.rating} size={i.size}/></div>)}
+        {asteroids_show.map((i)=><div><CardContent name={i.name} date={i.date} distance={GetDistance(i.distance)} rating={i.rating} size={i.size}/></div>)}
         <div className={styles.Quote}>
             2022 © Все права и планета защищены
         </div>

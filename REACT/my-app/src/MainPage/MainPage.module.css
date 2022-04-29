@@ -134,7 +134,7 @@ button.UnitsActive{
 @media(max-width:920px){
     .Name{
         position: absolute;
-        width: 199px;
+        width: 288px;
         height: 48px;
         left: 16px;
         top: 8px;
@@ -176,7 +176,7 @@ button.UnitsActive{
 
     .DistanceMode{
         position: absolute;
-        width: 212px;
+        width: 288px;
         height: 48px;
         left: 13px;
         top: 228px;
@@ -192,9 +192,29 @@ button.UnitsActive{
     
     .OnlyDangerous{
         position: absolute;
-        width: 227px;
+        width: 288px;
         height: 24px;
         left: 16px;
         top: 190px;
+    }
+    
+    .Quote{
+        position: relative;
+        width: 288px;
+        height: 24px;
+        left: 0px;
+        top: 300px;
+    
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    
+        display: flex;
+        align-items: flex-end;
+        text-align: center;
+    
+        color: #000000;
     }
 }
