@@ -7,4 +7,5 @@
 5.React App\
 6.Figma Template\
 7.Figma Template 2\
-8.NASA API
+8.NASA API\
+9.Reducer & Context
