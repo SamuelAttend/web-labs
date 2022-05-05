@@ -1,86 +1,86 @@
 .OnlyDangerous {
-  position: relative;
-  width: 196px;
-  height: 20px;
-  left: 206px;
-  top: 184px;
+    position: relative;
+    width: 196px;
+    height: 20px;
+    left: 206px;
+    top: 184px;
 
-  font-family: "Helvetica";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-
-  color: #000000;
-}
-
-.DistanceMode {
-  position: relative;
-  width: 379px;
-  height: 20px;
-  left: 748px;
-  top: 184px;
-
-  font-family: "Helvetica";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-
-  color: #000000;
-}
-
-button.UnitsDefault {
-  background: none;
-  border: none;
-  margin: 0px;
-  padding: 5px;
-
-  font-family: "Helvetica";
-  font-style: normal;
-  font-size: 16px;
-  line-height: 20px;
-
-  text-decoration: underline;
-  cursor: pointer;
-}
-button.UnitsActive {
-  background: none;
-  border: none;
-  margin: 0px;
-  padding: 5px;
-
-  font-family: "Helvetica";
-  font-style: normal;
-  font-size: 16px;
-  line-height: 20px;
-
-  font-weight: bold;
-  text-decoration: none;
-}
-
-@media (max-width: 920px) {
-  .OnlyDangerous {
-    position: absolute;
-    width: 288px;
-    height: 24px;
-    left: 16px;
-    top: 190px;
-  }
-
-  .DistanceMode {
-    position: absolute;
-    width: 288px;
-    height: 48px;
-    left: 13px;
-    top: 228px;
-
-    font-family: "Helvetica";
+    font-family: 'Helvetica';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 20px;
 
     color: #000000;
-  }
+}
+
+.DistanceMode {
+    position: relative;
+    width: 379px;
+    height: 20px;
+    left: 748px;
+    top: 184px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #000000;
+}
+
+button.UnitsDefault {
+    background: none;
+    border: none;
+    margin: 0px;
+    padding: 5px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+button.UnitsActive {
+    background: none;
+    border: none;
+    margin: 0px;
+    padding: 5px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media (max-width: 920px) {
+    .OnlyDangerous {
+        position: absolute;
+        width: 288px;
+        height: 24px;
+        left: 16px;
+        top: 190px;
+    }
+
+    .DistanceMode {
+        position: absolute;
+        width: 288px;
+        height: 48px;
+        left: 13px;
+        top: 228px;
+
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+
+        color: #000000;
+    }
 }
