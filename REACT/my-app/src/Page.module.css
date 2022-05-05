@@ -1,0 +1,135 @@
+.Page {
+  position: absolute;
+  width: 1280px;
+  height: 986px;
+  left: 80px;
+  top: 80px;
+
+  background: #ffffff;
+}
+
+.Name {
+  position: relative;
+  width: 299px;
+  height: 48px;
+  left: 206px;
+  top: 37px;
+
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 48px;
+
+  color: #000000;
+}
+
+.Info {
+  position: relative;
+  width: 414px;
+  height: 40px;
+  left: 206px;
+  top: 93px;
+
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #000000;
+}
+
+.Rectangle {
+  position: relative;
+  width: 920px;
+  height: 1px;
+  left: 203px;
+  top: 157px;
+
+  background: #000000;
+}
+
+.Quote {
+  position: relative;
+  width: 299px;
+  height: 24px;
+  left: 491px;
+  top: 300px;
+
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+
+  color: #000000;
+}
+
+@media (max-width: 920px) {
+  .Name {
+    position: absolute;
+    width: 288px;
+    height: 48px;
+    left: 16px;
+    top: 8px;
+
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 48px;
+
+    color: #000000;
+  }
+
+  .Info {
+    position: absolute;
+    width: 288px;
+    height: 60px;
+    left: 16px;
+    top: 64px;
+
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #000000;
+  }
+
+  .Rectangle {
+    position: absolute;
+    width: 288px;
+    height: 1px;
+    left: 16px;
+    top: 181px;
+
+    background: #000000;
+  }
+
+  .Quote {
+    position: relative;
+    width: 288px;
+    height: 24px;
+    left: 0px;
+    top: 300px;
+
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+
+    color: #000000;
+  }
+}
