@@ -8,4 +8,5 @@
 6.Figma Template\
 7.Figma Template 2\
 8.NASA API\
-9.Reducer & Context
+9.Reducer & Context\
+10.ESLint & Prettier

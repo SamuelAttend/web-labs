@@ -1,4 +1,4 @@
-.Card{
+.Card {
     position: relative;
     width: 920px;
     height: 200px;
@@ -6,34 +6,34 @@
     top: 228px;
     margin-top: 50px;
 
-    overflow:hidden;
-    
+    overflow: hidden;
+
     border: 1px solid #000000;
     box-sizing: border-box;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
-.GreenCard{
+.GreenCard {
     position: relative;
     width: 920px;
     height: 200px;
     left: 0px;
     top: 0px;
 
-    background: linear-gradient(90deg, #CFF37D 0%, #7DE88C 100%);
+    background: linear-gradient(90deg, #cff37d 0%, #7de88c 100%);
 }
 
-.RedCard{
+.RedCard {
     position: relative;
     width: 920px;
     height: 200px;
     left: 0px;
     top: 0px;
-    
-    background: linear-gradient(90deg, #FFB199 0%, #FF0844 100%);
+
+    background: linear-gradient(90deg, #ffb199 0%, #ff0844 100%);
 }
 
-.Name{
+.Name {
     position: absolute;
     width: 256px;
     height: 32px;
@@ -51,7 +51,7 @@
     color: #000000;
 }
 
-.Info{
+.Info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -64,61 +64,61 @@
     top: 72px;
 }
 
-.Date{
+.Date {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     padding: 0px;
-    
+
     position: static;
     width: 289px;
     height: 24px;
     left: 0px;
     top: 0px;
-    
+
     flex: none;
     order: 0;
     flex-grow: 0;
     margin: 8px 0px;
 }
 
-.Distance{
+.Distance {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     padding: 0px;
-    
+
     position: static;
     width: 289px;
     height: 24px;
     left: 0px;
     top: 32px;
-    
+
     flex: none;
     order: 1;
     flex-grow: 0;
     margin: 8px 0px;
 }
 
-.Size{
+.Size {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     padding: 0px;
-    
+
     position: static;
     width: 289px;
     height: 24px;
     left: 0px;
     top: 64px;
-    
+
     flex: none;
     order: 2;
     flex-grow: 0;
     margin: 8px 0px;
 }
 
-.Rating{
+.Rating {
     position: absolute;
     width: 80px;
     height: 48px;
@@ -138,7 +138,7 @@
     color: #000000;
 }
 
-.Destroy{
+.Destroy {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -150,16 +150,16 @@
     left: 738px;
     top: 96px;
 
-    background: #186DD6;
+    background: #186dd6;
     border-radius: 24px;
 }
 
-.DestroyText{
+.DestroyText {
     position: static;
     height: 20px;
     left: 16px;
     right: 16px;
-    top: calc(50% - 20px/2);
+    top: calc(50% - 20px / 2);
 
     font-family: 'Helvetica';
     font-style: normal;
@@ -167,8 +167,7 @@
     font-size: 16px;
     line-height: 20px;
 
-    color: #FFFFFF;
-
+    color: #ffffff;
 
     flex: none;
     order: 1;
@@ -176,7 +175,7 @@
     margin: 0px 4px;
 }
 
-.Dino{
+.Dino {
     position: absolute;
     left: 1.74%;
     right: 92.17%;
@@ -184,14 +183,14 @@
     bottom: 0%;
 }
 
-.Asteroid{
+.Asteroid {
     position: absolute;
     left: 128px;
     top: -20px;
 }
 
-@media(max-width:920px){
-    .Card{
+@media (max-width: 920px) {
+    .Card {
         position: relative;
         width: 288px;
         height: 391px;
@@ -199,7 +198,7 @@
         top: 228px;
         margin-top: 75px;
 
-        overflow:hidden;
+        overflow: hidden;
 
         background: white;
 
@@ -208,27 +207,27 @@
         border-radius: 10px;
     }
 
-    .GreenCard{
+    .GreenCard {
         position: absolute;
         width: 288px;
         height: 145px;
         left: 0px;
         top: 0px;
-        
-        background: linear-gradient(90deg, #CFF37D 0%, #7DE88C 100%);
+
+        background: linear-gradient(90deg, #cff37d 0%, #7de88c 100%);
     }
 
-    .RedCard{
+    .RedCard {
         position: absolute;
         width: 288px;
         height: 145px;
         left: 0px;
         top: 0px;
-        
-        background: linear-gradient(90deg, #FFB199 0%, #FF0844 100%);  
+
+        background: linear-gradient(90deg, #ffb199 0%, #ff0844 100%);
     }
-    
-    .Dino{
+
+    .Dino {
         position: absolute;
         left: 97.22%;
         top: 67%;
@@ -237,7 +236,7 @@
         transform: matrix(-1, 0, 0, 1, 0, 0);
     }
 
-    .Name{
+    .Name {
         position: absolute;
         width: 256px;
         height: 32px;
@@ -255,7 +254,7 @@
         color: #000000;
     }
 
-    .Info{
+    .Info {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -268,7 +267,7 @@
         top: 145px;
     }
 
-    .Date{
+    .Date {
         display: flex;
         flex-direction: row;
         align-items: flex-end;
@@ -286,7 +285,7 @@
         margin: 8px 0px;
     }
 
-    .Distance{
+    .Distance {
         display: flex;
         flex-direction: row;
         align-items: flex-end;
@@ -304,7 +303,7 @@
         margin: 8px 0px;
     }
 
-    .Size{
+    .Size {
         display: flex;
         flex-direction: row;
         align-items: flex-end;
@@ -322,7 +321,7 @@
         margin: 8px 0px;
     }
 
-    .Rating{
+    .Rating {
         position: absolute;
         width: 80px;
         height: 48px;
@@ -342,7 +341,7 @@
         color: #000000;
     }
 
-    .Destroy{
+    .Destroy {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -354,16 +353,16 @@
         left: 65px;
         top: 321px;
 
-        background: #186DD6;
+        background: #186dd6;
         border-radius: 24px;
     }
 
-    .DestroyText{
+    .DestroyText {
         position: static;
         height: 20px;
         left: 16px;
         right: 16px;
-        top: calc(50% - 20px/2);
+        top: calc(50% - 20px / 2);
 
         font-family: 'Helvetica';
         font-style: normal;
@@ -371,7 +370,7 @@
         font-size: 16px;
         line-height: 20px;
 
-        color: #FFFFFF;
+        color: #ffffff;
 
         flex: none;
         order: 1;
@@ -379,7 +378,7 @@
         margin: 0px 4px;
     }
 
-    .Asteroid{
+    .Asteroid {
         position: absolute;
         left: 58px;
         top: -20px;
