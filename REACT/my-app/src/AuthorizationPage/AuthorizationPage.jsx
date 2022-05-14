@@ -23,6 +23,10 @@ export function AuthorizationPage() {
     }
 
     function submit(e) {
+        if (name.length < 4 || key.length < 40) {
+            alert('Длина имени пользователя или ключа меньше необходимого');
+            return;
+        }
         if (rememberUser) {
             window.localStorage.setItem('name', name);
             window.localStorage.setItem('key', key);
