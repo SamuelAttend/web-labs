@@ -69,19 +69,32 @@ export function AuthorizationPage() {
             </div>
             {state.userData.name !== 'DEMO_NAME' &&
             state.userData.key !== 'DEMO_KEY' ? (
-                <div>
-                    <div>{state.userData.name}</div>
-                    <button type="button" onClick={quit}>
+                <div className={styles.AuthorizationForm}>
+                    <button
+                        type="button"
+                        onClick={quit}
+                        className={styles.QuitButton}
+                    >
                         Выйти
                     </button>
                 </div>
             ) : (
-                <div>
+                <div className={styles.AuthorizationForm}>
                     <div>
-                        <input type="text" value={name} onChange={changeName} />
+                        <input
+                            type="text"
+                            value={name}
+                            onChange={changeName}
+                            className={styles.TextBox}
+                        />
                     </div>
                     <div>
-                        <input type="text" value={key} onChange={changeKey} />
+                        <input
+                            type="text"
+                            value={key}
+                            onChange={changeKey}
+                            className={styles.TextBox}
+                        />
                     </div>
                     <div>
                         <input
@@ -92,7 +105,11 @@ export function AuthorizationPage() {
                         Запомнить меня
                     </div>
                     <div>
-                        <button type="button" onClick={submit}>
+                        <button
+                            type="button"
+                            onClick={submit}
+                            className={styles.SubmitButton}
+                        >
                             Войти
                         </button>
                     </div>

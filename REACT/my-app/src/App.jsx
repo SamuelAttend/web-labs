@@ -64,7 +64,7 @@ function App() {
                     Уничтожение
                 </Link>
                 <Link to="Authorization" style={linkStyle}>
-                    Авторизация
+                    Авторизация ({state.userData.name})
                 </Link>
             </header>
             <AsteroidContext.Provider value={{ state, dispatch }}>
