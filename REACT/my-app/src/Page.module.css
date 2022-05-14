@@ -2,14 +2,15 @@
     position: absolute;
     width: 1280px;
     height: 986px;
-    left: 80px;
+    left: 50%;
+    transform: translate(-50%, 0%);
     top: 80px;
 
     background: #ffffff;
 }
 
 .Name {
-    position: relative;
+    position: absolute;
     width: 299px;
     height: 48px;
     left: 206px;
@@ -25,7 +26,7 @@
 }
 
 .Info {
-    position: relative;
+    position: absolute;
     width: 414px;
     height: 40px;
     left: 206px;
@@ -41,7 +42,7 @@
 }
 
 .Rectangle {
-    position: relative;
+    position: absolute;
     width: 920px;
     height: 1px;
     left: 203px;
@@ -71,9 +72,18 @@
 }
 
 @media (max-width: 920px) {
+    .Page {
+        position: absolute;
+        width: 920px;
+        left: 0%;
+        transform: translate(0%, 0%);
+        top: 80px;
+
+        background: #ffffff;
+    }
     .Name {
         position: absolute;
-        width: 288px;
+        width: 199px;
         height: 48px;
         left: 16px;
         top: 8px;
@@ -108,7 +118,7 @@
         width: 288px;
         height: 1px;
         left: 16px;
-        top: 181px;
+        top: 157px;
 
         background: #000000;
     }
@@ -118,7 +128,7 @@
         width: 288px;
         height: 24px;
         left: 0px;
-        top: 300px;
+        top: 325px;
 
         font-family: 'Helvetica';
         font-style: normal;

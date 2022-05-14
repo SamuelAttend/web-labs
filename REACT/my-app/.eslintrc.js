@@ -16,7 +16,7 @@ module.exports = {
         'no-restricted-syntax': 'off',
         'import/no-cycle': ['off', { maxDepth: Infinity }],
         'no-undef': 'warn',
-        'import/prefer-default-export': 'warn',
+        'import/prefer-default-export': 'off',
         'react/jsx-no-constructed-context-values': 'warn',
         'guard-for-in': 'warn',
         'react/destructuring-assignment': 'warn',

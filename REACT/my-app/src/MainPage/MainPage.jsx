@@ -8,12 +8,12 @@ export function MainPage() {
 
     return (
         <div className={styles.Page}>
+            <div className={styles.Rectangle} />
             <div className={styles.Name}>ARMAGGEDON V</div>
             <div className={styles.Info}>
                 Сервис мониторинга и уничтожения астероидов, опасно подлетающих
                 к Земле.
             </div>
-            <div className={styles.Rectangle} />
 
             <AsteroidContext.Provider value={{ state, dispatch }}>
                 <NavigationManager />

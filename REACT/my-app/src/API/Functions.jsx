@@ -3,9 +3,7 @@ import {
     IS_NOT_DANGEROUS,
 } from '../NavigationManager/NavigarionManagerConst';
 
-export function GetURL() {
-    const KEY = 'process.env.REACT_APP_NASA_API_KEY' || 'DEMO_KEY';
-
+export function GetURL(KEY) {
     function TransformDate(date) {
         let day = date.getDate();
         let month = date.getMonth() + 1;
