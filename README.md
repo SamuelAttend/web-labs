@@ -9,4 +9,5 @@
 7.Figma Template 2\
 8.NASA API\
 9.Reducer & Context\
-10.ESLint & Prettier
+10.ESLint & Prettier\
+11.Local Storage

@@ -1,4 +1,5 @@
 import {
+    SET_USER_DATA,
     UPDATE_ASTEROIDS_LIST,
     UPDATE_DESTROY,
     UPDATE_ONLY_DANGEROUS,
@@ -23,6 +24,14 @@ export function reducer(state, action) {
             return {
                 ...state,
                 destroyList: [...state.destroyList, action.payload],
+            };
+        case SET_USER_DATA:
+            return {
+                ...state,
+                userData: {
+                    name: action.payload.name,
+                    apiKey: action.payload.apiKey,
+                },
             };
 
         default:
