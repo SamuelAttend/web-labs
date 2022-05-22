@@ -1,30 +1,30 @@
-import React, { useContext } from 'react';
-import styles from './NavigationManager.module.css';
-import { DISTANCE_KM, DISTANCE_LUNAR } from './NavigarionManagerConst';
-import { AsteroidsRender } from '../AsteroidsRender/AsteroidsRender';
-import { AsteroidContext } from '../App';
-import { UPDATE_ONLY_DANGEROUS, UPDATE_UNITS } from '../Reducer/ReducerConst';
+import React, { useContext } from "react";
+import styles from "./NavigationManager.module.css";
+import { DISTANCE_KM, DISTANCE_LUNAR } from "./NavigarionManagerConst";
+import { AsteroidsRender } from "../AsteroidsRender/AsteroidsRender";
+import { AsteroidContext } from "../App";
+import { UPDATE_ONLY_DANGEROUS, UPDATE_UNITS } from "../Reducer/ReducerConst";
 
 export function NavigationManager() {
     const { state, dispatch } = useContext(AsteroidContext);
 
-    function setOnlyDangerous(event) {
+    function setOnlyDangerous(event: any) {
         dispatch({
-            payload: event.target.checked,
+            payload: { ...state, onlyDangerous: event.target.checked },
             type: UPDATE_ONLY_DANGEROUS,
         });
     }
 
     function setUnitsToKm() {
         dispatch({
-            payload: DISTANCE_KM,
+            payload: { ...state, units: DISTANCE_KM },
             type: UPDATE_UNITS,
         });
     }
 
     function setUnitsToLunar() {
         dispatch({
-            payload: DISTANCE_LUNAR,
+            payload: { ...state, units: DISTANCE_LUNAR },
             type: UPDATE_UNITS,
         });
     }

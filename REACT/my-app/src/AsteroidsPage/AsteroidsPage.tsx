@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { AsteroidContext } from '../App';
-import { NavigationManager } from '../NavigationManager/NavigationManager';
-import styles from '../Page.module.css';
+import React, { useContext } from "react";
+import { AsteroidContext } from "../App";
+import { NavigationManager } from "../NavigationManager/NavigationManager";
+import styles from "../Page.module.css";
 
-export function MainPage() {
+export function AsteroidsPage() {
     const { state, dispatch } = useContext(AsteroidContext);
 
     return (
