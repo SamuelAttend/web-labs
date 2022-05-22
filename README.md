@@ -10,4 +10,5 @@
 8.NASA API\
 9.Reducer & Context\
 10.ESLint & Prettier\
-11.Local Storage
+11.Local Storage\
+12.TypeScript
