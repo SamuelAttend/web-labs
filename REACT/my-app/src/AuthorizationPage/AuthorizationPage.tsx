@@ -1,41 +1,42 @@
-import React, { useState, useContext } from 'react';
-import styles from '../Page.module.css';
-import { AsteroidContext } from '../App';
-import { SET_USER_DATA, UPDATE_ASTEROIDS_LIST } from '../Reducer/ReducerConst';
-import { GetURL, GetAsteroidsData } from '../API/Functions';
+import React, { useState, useContext } from "react";
+import styles from "../Page.module.css";
+import { AsteroidContext } from "../App";
+import { SET_USER_DATA, UPDATE_ASTEROIDS_LIST } from "../Reducer/ReducerConst";
+import { GetURL, GetAsteroidsData } from "../API/Functions";
 
 export function AuthorizationPage() {
     const { state, dispatch } = useContext(AsteroidContext);
-    const [name, setName] = useState('');
-    const [key, setKey] = useState('');
+
+    const [name, setName] = useState("");
+    const [key, setKey] = useState("");
     const [rememberUser, setRememberUser] = useState(false);
 
-    function changeName(e) {
+    function changeName(e: any) {
         setName(e.target.value);
     }
 
-    function changeKey(e) {
+    function changeKey(e: any) {
         setKey(e.target.value);
     }
 
-    function changeRememberUser(e) {
+    function changeRememberUser(e: any) {
         setRememberUser(e.target.checked);
     }
 
-    function submit(e) {
+    function submit(e: any) {
         if (name.length < 4 || key.length < 40) {
-            alert('Длина имени пользователя или ключа меньше необходимого');
+            alert("Длина имени пользователя или ключа меньше необходимого");
             return;
         }
         if (rememberUser) {
-            window.localStorage.setItem('name', name);
-            window.localStorage.setItem('key', key);
+            window.localStorage.setItem("name", name);
+            window.localStorage.setItem("key", key);
         }
 
         dispatch({
             payload: {
-                name,
-                key,
+                ...state,
+                userData: { name: name, key: key },
             },
             type: SET_USER_DATA,
         });
@@ -44,18 +45,21 @@ export function AuthorizationPage() {
             .then((response) =>
                 response.json().then((data) => {
                     dispatch({
-                        payload: GetAsteroidsData(data),
+                        payload: {
+                            ...state,
+                            asteroidsList: GetAsteroidsData(data),
+                        },
                         type: UPDATE_ASTEROIDS_LIST,
                     });
                 })
             )
             .catch((error) => console.log(error));
     }
-    function quit(e) {
+    function quit(e: any) {
         dispatch({
             payload: {
-                name: 'DEMO_NAME',
-                key: 'DEMO_KEY',
+                ...state,
+                userData: { name: "DEMO_NAME", key: "DEMO_KEY" },
             },
             type: SET_USER_DATA,
         });
@@ -71,8 +75,8 @@ export function AuthorizationPage() {
                 Это приложение делает запрос в API NASA. Для авторизации
                 необходим специальный ключ
             </div>
-            {state.userData.name !== 'DEMO_NAME' &&
-            state.userData.key !== 'DEMO_KEY' ? (
+            {state.userData.name !== "DEMO_NAME" &&
+            state.userData.key !== "DEMO_KEY" ? (
                 <div className={styles.AuthorizationForm}>
                     <button
                         type="button"
@@ -103,7 +107,7 @@ export function AuthorizationPage() {
                     <div>
                         <input
                             type="checkbox"
-                            value={rememberUser}
+                            value={rememberUser ? 1 : 0}
                             onChange={changeRememberUser}
                         />
                         Запомнить меня

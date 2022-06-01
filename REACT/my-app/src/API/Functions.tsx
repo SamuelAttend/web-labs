@@ -1,10 +1,10 @@
 import {
     IS_DANGEROUS,
     IS_NOT_DANGEROUS,
-} from '../NavigationManager/NavigarionManagerConst';
+} from "../NavigationManager/NavigarionManagerConst";
 
-export function GetURL(KEY) {
-    function TransformDate(date) {
+export function GetURL(KEY: any) {
+    function TransformDate(date: any) {
         let day = date.getDate();
         let month = date.getMonth() + 1;
         if (day < 10) {
@@ -27,7 +27,7 @@ export function GetURL(KEY) {
     return url;
 }
 
-export function GetAsteroidsData(data) {
+export function GetAsteroidsData(data: any) {
     const asteroidsList = [];
 
     for (const i in data.near_earth_objects) {

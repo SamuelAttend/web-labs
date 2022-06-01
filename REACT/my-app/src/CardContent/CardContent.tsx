@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
-import { useLocation } from 'react-router-dom';
-import styles from './CardContent.module.css';
+import React, { useContext } from "react";
+import { useLocation } from "react-router-dom";
+import styles from "./CardContent.module.css";
 import {
     DESTROY_PAGE,
     DISTANCE_KM,
     IS_DANGEROUS,
-} from '../NavigationManager/NavigarionManagerConst';
-import { AsteroidContext } from '../App';
-import { UPDATE_ASTEROIDS_LIST, UPDATE_DESTROY } from '../Reducer/ReducerConst';
+} from "../NavigationManager/NavigarionManagerConst";
+import { Asteroid, AsteroidContext } from "../App";
+import { UPDATE_ASTEROIDS_LIST, UPDATE_DESTROY } from "../Reducer/ReducerConst";
 
 function DinoSVG() {
     return (
@@ -32,8 +32,9 @@ function DinoSVG() {
     );
 }
 
-function AsteriodSVG(props) {
-    if (props.size < 100) {
+function AsteriodSVG(props: any) {
+    const size: number = props.size;
+    if (size < 100) {
         return (
             <div className={styles.Asteroid}>
                 <svg
@@ -94,8 +95,7 @@ function AsteriodSVG(props) {
                 </svg>
             </div>
         );
-    }
-    if (props.size >= 100 && props.size <= 1000) {
+    } else if (size >= 100 && size <= 1000) {
         return (
             <div className={styles.Asteroid}>
                 <svg
@@ -144,8 +144,7 @@ function AsteriodSVG(props) {
                 </svg>
             </div>
         );
-    }
-    if (props.size > 1000) {
+    } else {
         return (
             <div className={styles.Asteroid}>
                 <svg
@@ -177,21 +176,24 @@ function AsteriodSVG(props) {
     }
 }
 
-export function CardContent(props) {
+export function CardContent(props: any) {
     const { state, dispatch } = useContext(AsteroidContext);
     const loc = useLocation().pathname;
-    const asteroid = props.element;
+    const asteroid: Asteroid = props.element;
 
     function setDestroy() {
         dispatch({
-            payload: asteroid,
+            payload: { ...state, destroyList: [asteroid] },
             type: UPDATE_DESTROY,
         });
 
         dispatch({
-            payload: state.asteroidsList.filter(
-                (i) => i.name !== asteroid.name
-            ),
+            payload: {
+                ...state,
+                asteroidsList: state.asteroidsList.filter(
+                    (i) => i.name !== asteroid.name
+                ),
+            },
             type: UPDATE_ASTEROIDS_LIST,
         });
     }
@@ -219,7 +221,7 @@ export function CardContent(props) {
                 <div className={styles.Info}>
                     <div className={styles.Date}>Дата: {asteroid.date}</div>
                     <div className={styles.Distance}>
-                        Расстояние:{' '}
+                        Расстояние:{" "}
                         {`${
                             state.units === DISTANCE_KM
                                 ? asteroid.distance
