@@ -11,4 +11,5 @@
 9.Reducer & Context\
 10.ESLint & Prettier\
 11.Local Storage\
-12.TypeScript
+12.TypeScript\
+13.GitHub Pages
