@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/web-labs-app/static/css/main.f629f9a7.css",
+    "main.js": "/web-labs-app/static/js/main.6cde950c.js",
+    "index.html": "/web-labs-app/index.html",
+    "main.f629f9a7.css.map": "/web-labs-app/static/css/main.f629f9a7.css.map",
+    "main.6cde950c.js.map": "/web-labs-app/static/js/main.6cde950c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f629f9a7.css",
+    "static/js/main.6cde950c.js"
+  ]
+}
